@@ -1,0 +1,2 @@
+test_cases:
+  - testcases/web/login_cura.py
