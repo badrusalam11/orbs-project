@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_txt-username</name>
-   <tag>input</tag>
-   <elementGuidId>4631c2d7-c5b6-433a-9a82-2380c1b83369</elementGuidId>
+   <name>p_login_failed!_please</name>
+   <tag>p</tag>
+   <elementGuidId>8744e129-8931-4511-a70a-b45f052e9cd9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>id("txt-username")</value>
+         <value>id("login")/div/div/div/p[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -17,21 +17,21 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>input</value>
+      <value>p</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>txt-username</value>
+      <value></value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
-      <value>form-control</value>
+      <value>lead text-danger</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -45,21 +45,21 @@
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value></value>
+      <value>Login failed! Please ensure the username and password are valid.</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>type</name>
       <type>Main</type>
-      <value>text</value>
+      <value></value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>placeholder</name>
       <type>Main</type>
-      <value>Username</value>
+      <value></value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
