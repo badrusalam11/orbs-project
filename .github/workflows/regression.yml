@@ -22,10 +22,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Orbs CLI
-        run: |
-          pip install orbs
-
       - name: Run Regression Suite
         run: |
           orbs run testsuite_collections/regression.yml
