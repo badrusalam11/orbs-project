@@ -4,10 +4,13 @@ execution_method: parallel
 max_concurrent_instances: 3
 delay_between_instances(s): 1
 testsuites:
+  - testsuite: testsuites\login_cura.yml
+    platform: chrome
+    enabled: true
+  - testsuite: testsuites/login_sauce_web.yml
+    platform: firefox
+    enabled: true
   - testsuite: testsuites\login_sauce.yml
     platform: android
     device_id: 8600efc8
-    enabled: true
-  - testsuite: testsuites\login_cura.yml
-    platform: firefox
-    enabled: true
+    enabled: false

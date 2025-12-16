@@ -1,5 +1,3 @@
 test_cases:
-  - path: testcases/web/login_cura.py
-    enabled: true
   - path: testcases/web/launch.py
     enabled: true
