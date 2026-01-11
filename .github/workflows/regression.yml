@@ -31,13 +31,12 @@ jobs:
         run: |
           pip install orbs-cli
 
-      - name: Set Headless Mode
-        run: |
-          export headless=true
-          
       - name: Run Regression Suite
+        env:
+          headless: "true"
         run: |
           orbs run testsuites/login_cura.yml
+
 
       - name: Upload Test Report
         uses: actions/upload-artifact@v4
