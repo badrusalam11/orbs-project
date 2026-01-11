@@ -2,37 +2,37 @@ from behave import given, when, then
 from orbs.mobile_factory import MobileFactory
 import time
 from appium.webdriver.common.appiumby import AppiumBy
+from orbs.keyword.mobile import Mobile
+from orbs.log import log
 
 @given('the mobile app is installed on Sauce Labs device')
 def step_app_installed(context):
-    factory = MobileFactory()
-    context.driver = factory.create_driver("com.swaglabsmobileapp", "com.swaglabsmobileapp.MainActivity")
+    Mobile.launch("com.swaglabsmobileapp", "com.swaglabsmobileapp.MainActivity", True)
     time.sleep(10)  # Give app time to load
-    context.driver.get_screenshot_as_file("login_page.png")
+    Mobile.take_screenshot("app_launched.png")
 
 @when('the user enters username "{username}" and password "{password}"')
-def step_enter_credentials(context, username, password):
-
-    user_field = context.driver.find_element(AppiumBy.ACCESSIBILITY_ID, "test-Username")
-    pass_field = context.driver.find_element(AppiumBy.ACCESSIBILITY_ID, "test-Password")
-
-    user_field.send_keys(username)
-    pass_field.send_keys(password)
-
-    context.driver.get_screenshot_as_file("credentials_entered.png")
-
+def step_enter_credentials(context, username, password):    
+    Mobile.set_text("accessibility_id=test-Username", username)
+    Mobile.set_text("accessibility_id=test-Password", password)
+    Mobile.take_screenshot("credentials_entered.png")
 
 @when('the user taps the login button')
 def step_tap_login(context):
-    login_btn = context.driver.find_element(AppiumBy.ACCESSIBILITY_ID, "test-LOGIN")
-    login_btn.click()
+    Mobile.click("accessibility_id=test-LOGIN")
     time.sleep(3)
 
 @then('the home screen should be displayed')
 def step_verify_home(context):
     try:
-        home_el = context.driver.find_element(AppiumBy.ACCESSIBILITY_ID, "test-PRODUCTS")
-        assert home_el.is_displayed(), "Home screen not displayed"
-        context.driver.get_screenshot_as_file("home_screen.png")
+        Mobile.verify_element_visible("accessibility_id=test-PRODUCTS")
+        assert True, "Home screen displayed"
+        Mobile.take_screenshot("home_screen.png")
+    except Exception as e:
+        Mobile.take_screenshot("home_screen_error.png")
+        log.error(f"Error verifying home screen: {str(e)}") 
+        assert False, f"Home screen not displayed: {str(e)}"
     finally:
-        context.driver.quit()
+        # Mobile.quit()   
+        Mobile.terminate_app("com.swaglabsmobileapp")
+        Mobile.quit()
