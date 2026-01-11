@@ -31,6 +31,10 @@ jobs:
         run: |
           pip install orbs-cli
 
+      - name: Set Headless Mode
+        run: |
+          export headless=true
+          
       - name: Run Regression Suite
         run: |
           orbs run testsuites/login_cura.yml
