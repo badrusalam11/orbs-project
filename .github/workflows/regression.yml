@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Regression Suite
         run: |
-          orbs run testsuite/login_cura.yml
+          orbs run testsuites/login_cura.yml
 
       - name: Upload Test Report
         uses: actions/upload-artifact@v4
