@@ -16,15 +16,24 @@ jobs:
   regression:
     if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
 
-    runs-on: self-hosted  # or 'ubuntu-latest' if GitHub-hosted
+    runs-on: ubuntu-latest  # self-hosted or 'ubuntu-latest' if GitHub-hosted
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      
+      - name: Install Orbs CLI
+        run: |
+          pip install orbs-cli
+
       - name: Run Regression Suite
         run: |
-          orbs run testsuite_collections/regression.yml
+          orbs run testsuite/login_cura.yml
 
       - name: Upload Test Report
         uses: actions/upload-artifact@v4
