@@ -2,21 +2,22 @@ name: Run Orbs Regression Suite
 
 on:
   push:
-    branches:
-      - 'main'          # on push to any branch
-  pull_request:
-    types:
-      - closed        # only when a PR is closed (includes merges)
-    branches:
-      - main          # merged into main
+    branches: [ main ]
 
-  workflow_dispatch:   # still allows manual triggering
+  pull_request:
+    types: [ closed ]
+    branches: [ main ]
+
+  workflow_dispatch:
 
 jobs:
   regression:
-    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
+    permissions:
+      checks: write
+      contents: read
 
-    runs-on: ubuntu-latest  # self-hosted or 'ubuntu-latest' if GitHub-hosted
+    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -26,14 +27,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      
+
       - name: Install Orbs CLI
-        run: |
-          pip install orbs-cli
+        run: pip install orbs-cli
 
       - name: Run Regression Suite
         env:
-          headless: "true"
+          HEADLESS: "true"
         run: |
           orbs run testsuites/login_cura.yml
 
