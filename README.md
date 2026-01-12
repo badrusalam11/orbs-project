@@ -1,5 +1,5 @@
 # orbs
-This is a python framework that customize the folder structure similar with Katalon's POM
+This is orbs project sample 
 
 # Run with shortcut
 - Open file test_suite.yml or test_case.py
