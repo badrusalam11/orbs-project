@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Regression Suite
         env:
-          HEADLESS: "true"
+          header: "true"
         run: |
           orbs run testsuites/login_cura.yml
 
