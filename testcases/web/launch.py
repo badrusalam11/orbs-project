@@ -10,4 +10,4 @@ def run():
 
     # with abstration
     Web.open("https://katalon-demo-cura.herokuapp.com/")
-    
+    Web.take_screenshot("launch_page.png")

@@ -12,6 +12,7 @@ def step_username(context, username, password):
     Web.click("id=btn-make-appointment")
     Web.set_text("id=txt-username", username)
     Web.set_text("id=txt-password", password)
+    Web.take_screenshot("fill_credentials.png")
     Web.click("id=btn-login")
 
 
