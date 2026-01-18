@@ -9,8 +9,8 @@ testsuites:
     enabled: true
   - testsuite: testsuites/login_sauce_web.yml
     platform: firefox
-    enabled: false
+    enabled: true
   - testsuite: testsuites\login_sauce.yml
     platform: android
     device_id: RR8W106N32M
-    enabled: true
+    enabled: false
