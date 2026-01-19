@@ -1,0 +1,19 @@
+# Development Environment Configuration
+
+# Application URLs
+cura_url: "https://katalon-demo-cura.herokuapp.com/"
+api_url: "https://api-dev.example.com"
+
+# Credentials
+username: "dev_user"
+password: "dev_password"
+
+# API Configuration
+api_timeout: 60
+api_retry: 5
+
+# Database Configuration
+db_host: "dev-db.example.com"
+db_port: 5432
+db_name: "dev_db"
+

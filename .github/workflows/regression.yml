@@ -33,8 +33,9 @@ jobs:
 
       - name: Run Regression Suite
         env:
-          headless: true
-          environment: prod
+          HEADLESS: true
+          ORBS_ENV: uat
+          ORBS_DEBUG: true  
           tester_name: ${{ github.actor }}
         run: |
           orbs run testsuite_collections/regression.yml
