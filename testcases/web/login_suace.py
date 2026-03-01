@@ -1,4 +1,5 @@
 from orbs.keyword.web import Web, find_test_obj
+from orbs.keyword.web import FailureHandling as FH
 
 def run():
     Web.open("https://www.saucedemo.com/")
