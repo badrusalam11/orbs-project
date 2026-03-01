@@ -1,8 +1,9 @@
 from orbs.keyword.web import Web
+from orbs.config import config
 
 @given('the user opens the login page')
 def step_open_login(context):
-    Web.open("https://katalon-demo-cura.herokuapp.com/")
+    Web.open(config.target('cura_url', ''))
     Web.maximize_window()
 
 

@@ -1,10 +1,12 @@
-from orbs.keyword.web import Web
+from orbs.keyword.web import Web, find_test_obj
+
 def run():
     Web.open("https://www.saucedemo.com/")
-    Web.set_text("id=user-name", "standard_user")
-    Web.set_text("id=password", "secret_sauce")
+    Web.set_text(find_test_obj("object_repository\input_user-name.xml"), "standard_user")
+    Web.set_text(find_test_obj("object_repository\input_password.xml"), "secret_sauce")
     Web.take_screenshot("login_page.png")
-    Web.click("id=login-button")
-    Web.verify_text("class=app_logo", "Swag Labs")
+    Web.click(find_test_obj("object_repository\input_login-button.xml"))
+    Web.verify_element_visible(find_test_obj("object_repository\div_swag_labs.xml"), 5)
     Web.take_screenshot("dashboard.png")
+    Web.close()      
 
