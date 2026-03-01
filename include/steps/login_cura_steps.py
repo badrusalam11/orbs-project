@@ -21,3 +21,4 @@ def step_username(context, username, password):
 def step_dashboard(context):
     Web.wait_for_visible("id=menu-toggle", 10)
     Web.take_screenshot("login_success.png")
+    Web.close()

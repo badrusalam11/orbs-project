@@ -1,0 +1,3 @@
+test_cases:
+  - path: testcases/test_recorded_scenario.py
+    enabled: true
