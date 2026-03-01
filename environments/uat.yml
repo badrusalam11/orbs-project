@@ -1,19 +1,19 @@
-# UAT (User Acceptance Testing) Environment Configuration
+# Default Environment Configuration
+# This is the default configuration loaded when no specific environment is set
 
 # Application URLs
-cura_url: "https://uat.example.com"
-api_url: "https://api-uat.example.com"
+cura_url: "https://katalon-demo-cura.herokuapp.com/"
+api_url: "https://api.example.com"
 
-# Credentials
-username: "uat_user"
-password: "uat_password"
+# Credentials (use environment variables for sensitive data in production)
+username: "test_user"
+password: "test_password"
 
 # API Configuration
-api_timeout: 45
+api_timeout: 30
 api_retry: 3
 
 # Database Configuration
-db_host: "uat-db.example.com"
+db_host: "localhost"
 db_port: 5432
-db_name: "uat_db"
-
+db_name: "test_db"
