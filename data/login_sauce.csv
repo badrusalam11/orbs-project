@@ -1,0 +1,4 @@
+name,password,scenario,type,expected_result
+standard_user,secret_sauce,valid,standard,Swag Labs
+locked_out_user,secret_sauce,invalid,locked,"Epic sadface: Sorry, this user has been locked out."
+problem_user,secret_sauce,invalid,problem,Swag Labs

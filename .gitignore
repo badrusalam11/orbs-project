@@ -8,3 +8,4 @@ user.properties
 actmo.properties
 logs/
 .python-version
+data.local/
